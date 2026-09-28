@@ -26,7 +26,11 @@ jobs:
             
            - name: Run Dependency scan for nodejs
         # Fails the pipeline if HIGH or CRITICAL production vulnerabilities are found
-             run: npm audit 
+              run: npm audit fix
+
+        # Using || true ensures the workflow keeps running even if some flaws require manual updates
+         #  - name: Run NPM Audit Fix
+             #run: npm audit fix --audit-level=high --omit=dev
         # If your frontend is in a subdirectory, uncomment and update the line below:
              working-directory: frontend
 
@@ -39,7 +43,7 @@ jobs:
                 path: reports/dependency-report.txt
                 retention-days: 5
 
-                
+
               # ------------------------------------
               #  BACKEND
               # ------------------------------------

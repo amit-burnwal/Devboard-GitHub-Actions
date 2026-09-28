@@ -1,0 +1,6 @@
+{
+    "sonarlint.connectedMode.project": {
+        "connectionId": "amit-burnwal",
+        "projectKey": "Devboard-GitHub-Actions"
+    }
+}

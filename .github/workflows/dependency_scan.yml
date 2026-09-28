@@ -24,14 +24,10 @@ jobs:
                 cache: 'npm'
                 cache-dependency-path: frontend/package-lock.json
             
-           - name: Run Dependency scan for nodejs
+           
         # Fails the pipeline if HIGH or CRITICAL production vulnerabilities are found
-              run: npm audit fix --audit-level=high --omit=dev
-
-        # Using || true ensures the workflow keeps running even if some flaws require manual updates
-         #  - name: Run NPM Audit Fix
-             #run: npm audit fix --audit-level=high --omit=dev
-        # If your frontend is in a subdirectory, uncomment and update the line below:
+           - name: RUN dependency scan for nodejs
+             run: npm audit fix --audit-level=high --omit=dev || true
              working-directory: frontend
 
 

@@ -47,13 +47,13 @@ jobs:
            - name: Setup Go for backend
              uses: actions/setup-go@v6
              with:
-                go-version: '1.23'  # Adjust to your Go version
+                go-version: 1.22  # Adjust to your Go version
                 go-version-file: backend/go.mod
                 cache-dependency-path: backend/go.sum
 
            - name: Install Govulncheck
              # Installs the official tool and runs it against the current module
-             run: go install golang.org/x/vuln/cmd/govulncheck@latest
+             run: go install golang.org/x/vuln/cmd/govulncheck@1.1.4
 
            - name: Run Govulncheck
              run:  govulncheck ./... > govulncheck-report.txt

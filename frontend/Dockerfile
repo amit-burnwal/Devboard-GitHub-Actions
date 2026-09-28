@@ -11,6 +11,7 @@ COPY . .
 RUN npm install --legacy-peer-deps
 
 # Frontend Build -> stores to /dist
+# hadolint ignore=DL3059
 RUN npm run build
 
 # ---------------- Stage 1 ENDS ------------------------------

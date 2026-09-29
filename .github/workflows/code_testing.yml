@@ -30,15 +30,15 @@ jobs:
 
          - name: Install dependencies for frontend
            run: npm install --legacy-peer-deps
-           working-directory: ./frontend
+           working-directory: frontend
 
          - name: Run test for frontend(nodejs)
            run: npm run test
-           working-directory: ./frontend
+           working-directory: frontend
 
          - name: Run test for backend (go)
            run: go test
-           working-directory: ./backend
+           working-directory: backend
    
     
 
